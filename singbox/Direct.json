@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_suffix": [
+                "live.staticflickr.com",
+                "uiauto.devsleep.com"
+            ]
+        }
+    ]
+}

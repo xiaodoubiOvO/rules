@@ -1,0 +1,35 @@
+name: Compile and Push Binary
+
+on:
+  push:
+    paths:
+      - 'singbox/*.json' # 监控 singbox 目录下的所有 .json 文件
+
+jobs:
+  compile-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install sing-box
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl
+          bash <(curl -fsSL https://sing-box.app/deb-install.sh)
+
+      - name: Compile and push binaries
+        run: |
+          for file in singbox/*.json; do
+            filename=$(basename "$file" .json)
+            output_file="singbox/${filename}.srs"
+            sing-box rule-set compile --output "$output_file" "$file"
+            
+            # Check if there are any changes to the compiled file
+            git config --local user.name "github-actions[bot]"
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$output_file"
+            git commit -m "Auto-compiled $output_file from $file"
+            git push https://${{ secrets.GH_TOKEN }}@github.com/xiaodoubiOvO/rules.git HEAD:main
+          done
