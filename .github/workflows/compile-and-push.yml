@@ -27,9 +27,8 @@ jobs:
             filename=$(basename "$file" .json)
             output_file="singbox/${filename}.srs"
             sing-box rule-set compile --output "$output_file" "$file"
-            
-            # Check if there are any changes to the compiled file
-            git add "$output_file"
-            git commit -m "Auto-compiled $output_file from $file"
-            git push https://${{ secrets.GH_TOKEN }}@github.com/xiaodoubiOvO/rules.git HEAD:main
           done
+          # Check if there are any changes to the compiled file
+          git add .
+          git commit -m "Auto-compiled"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/xiaodoubiOvO/rules.git HEAD:main
