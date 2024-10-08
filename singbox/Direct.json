@@ -6,11 +6,11 @@
                 "live.staticflickr.com",
                 "uiauto.devsleep.com",
                 "jfbym.com"
+            ],
+            "ip_cidr": [
+                "103.167.26.0/24",
+                "103.167.27.0/24"
             ]
-        },
-        "ip_cidr": [
-            "103.167.26.0/24",
-            "103.167.27.0/24"
-        ]
+        }
     ]
 }
