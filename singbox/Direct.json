@@ -2,9 +2,10 @@
     "version": 1,
     "rules": [
         {
-            "ip_cidr": [
-                "103.167.26.0/24",
-                "103.167.27.0/24"
+            "domain_suffix": [
+                "live.staticflickr.com",
+                "uiauto.devsleep.com",
+                "jfbym.com"
             ]
         }
     ]
