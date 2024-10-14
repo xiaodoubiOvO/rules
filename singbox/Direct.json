@@ -5,7 +5,8 @@
             "domain_suffix": [
                 "live.staticflickr.com",
                 "uiauto.devsleep.com",
-                "jfbym.com"
+                "jfbym.com",
+                "tailscale.io"
             ]
         }
     ]
