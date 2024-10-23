@@ -3,7 +3,8 @@
     "rules": [
         {
             "domain_suffix": [
-                "ecmwf.int"
+                "ecmwf.int",
+                "uptimerobot.com"
             ]
         }
     ]
