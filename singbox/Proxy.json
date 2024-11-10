@@ -4,7 +4,8 @@
         {
             "domain_suffix": [
                 "ecmwf.int",
-                "uptimerobot.com"
+                "uptimerobot.com",
+                "roboflow.com"
             ]
         }
     ]
