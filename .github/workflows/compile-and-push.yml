@@ -3,7 +3,7 @@ name: Compile and Push Binary
 on:
   push:
     paths:
-      - 'singbox/*.json' # 监控 singbox 目录下的所有 .json 文件
+      - 'singbox/rule/*.json' # 监控 singbox 目录下的所有 .json 文件
 
 jobs:
   compile-and-push:
@@ -23,9 +23,9 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          for file in singbox/*.json; do
+          for file in singbox/rule/*.json; do
             filename=$(basename "$file" .json)
-            output_file="singbox/${filename}.srs"
+            output_file="singbox/rule/${filename}.srs"
             sing-box rule-set compile --output "$output_file" "$file"
           done
           # Check if there are any changes to the compiled file
