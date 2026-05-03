@@ -60,7 +60,7 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"domain_suffix": ["live.staticflickr.com", "tailscale.com"], "outbound": "🎯 全球直连"},
-      {"domain_suffix": ["javdb.com"], "outbound": "♻️ javdb"},
+      {"domain_suffix": ["javdb.com"], "outbound": "🐸 javdb"},
       {"rule_set": "geosite-ai", "outbound": "🧠 AI"},
       {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
       {"rule_set": "geosite-google", "outbound": "🍀 Google"},
