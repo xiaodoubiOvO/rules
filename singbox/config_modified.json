@@ -15,7 +15,8 @@
       {
         "tag": "foreign",
         "type": "https",
-        "server": "https://dns.google/dns-query",
+        "server": "dns.google",
+        "path": "/dns-query",
         "detour": "🚀 默认代理",
         "domain_resolver": "local"
       }
