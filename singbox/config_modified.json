@@ -2,7 +2,7 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
-      {"tag": "foreign", "type": "https", "server": "https://8.8.8.8/dns-query", "detour": "🚀 默认代理"}
+      {"tag": "foreign", "type": "udp", "server": "8.8.8.8", "detour": "🚀 默认代理"}
     ],
     "rules": [
       {"clash_mode": "direct", "server": "local"},
