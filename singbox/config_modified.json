@@ -2,7 +2,12 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
-      {"tag": "foreign", "type": "udp", "server": "8.8.8.8", "detour": "🚀 默认代理"}
+      {
+        "tag": "foreign",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🚀 默认代理"
+      }
     ],
     "rules": [
       {"clash_mode": "direct", "server": "local"},
@@ -54,7 +59,7 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"domain_suffix": ["live.staticflickr.com", "tailscale.com"], "outbound": "🎯 全球直连"},
-      {"domain_suffix": ["shturl.cc", "jdbstatic.com", "dmm.co.jp"], "outbound": "javdb"},
+      {"domain_suffix": ["jdbstatic.com", "dmm.co.jp"], "outbound": "javdb"},
       {"rule_set": "geosite-ai", "outbound": "🧠 AI"},
       {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
       {"rule_set": "geosite-google", "outbound": "🍀 Google"},
@@ -97,7 +102,7 @@
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"}
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"}
     ],
     "final": "🐠 漏网之鱼",
     "auto_detect_interface": true,
@@ -115,7 +120,17 @@
       "mtu": 9000,
       "auto_route": true,
       "auto_redirect": true,
-      "strict_route": true
+      "strict_route": true,
+      "stack": "mixed",
+      "route_address": ["0.0.0.0/1", "128.0.0.0/1", "::/1", "8000::/1"],
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "fc00::/7",
+        "fe80::/10",
+        "ff00::/8"
+      ]
     },
     {
       "tag": "socks-in",
